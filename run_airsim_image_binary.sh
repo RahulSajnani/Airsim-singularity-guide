@@ -56,7 +56,7 @@ else
   mkdir /tmp/.X11-unix
 fi
 
-singularity instance start $DOCKER_IMAGE_NAME airsim
+#singularity instance start $DOCKER_IMAGE_NAME airsim
 
 # Export CUDA devices
 export SINGULARITYENV_CUDA_VISIBLE_DEVICES=0
@@ -65,12 +65,12 @@ export SINGULARITYENV_CUDA_VISIBLE_DEVICES=0
 export SINGULARITY_BIND="$(pwd)/settings.json:/home/airsim_user/Documents/AirSim/settings.json,$UNREAL_BINARY_PATH:$UNREAL_BINARY_PATH,/tmp/.X11-unix:/tmp/.X11-unix:rw,$XAUTH:$XAUTH"
 
 # --nv is to use nvidia gpus
-# run the container in airsim instance
+# run the container
 singularity run --nv \
     --env DISPLAY=$DISPLAY \
     --env QT_X11_NO_MITSHM=1 \
     --env SDL_VIDEODRIVER=$SDL_VIDEODRIVER_VALUE \
     --env SDL_HINT_CUDA_DEVICE='0' \
     --env XAUTHORITY=$XAUTH \
-    instance://airsim \
+    $DOCKER_IMAGE_NAME \
     /bin/bash -c "$UNREAL_BINARY_COMMAND"
