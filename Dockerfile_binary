@@ -33,4 +33,3 @@ COPY settings.json /home/airsim_user/Documents/AirSim
 #ADD Documents /home/airsim_user/Documents
 
 RUN sudo chown -R airsim_user /home/airsim_user
-'+
