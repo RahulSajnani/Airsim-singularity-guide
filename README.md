@@ -36,7 +36,7 @@ This README assumes you have singularity v3.7.1 configured on your system. Ever 
 
    ```bash
    # Run the binary headless with openGL 4
-   ./run_airsim_image_binary.sh ./airsim_binary_10.0-devel-ubuntu18.04.sif ./Blocks/LinuxNoEditor/Blocks.sh -- headless -opengl4
+   /bin/bash ./run_airsim_image_binary.sh ./airsim_binary_10.0-devel-ubuntu18.04.sif ./Blocks/LinuxNoEditor/Blocks.sh -- headless -opengl4
    ```
 
    
