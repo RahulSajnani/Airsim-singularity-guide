@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Code borrowed and modified from https://github.com/microsoft/AirSim/blob/master/docker/run_airsim_image_binary.sh
 
 DOCKER_IMAGE_NAME=$1
