@@ -8,6 +8,7 @@ UNREAL_BINARY_PATH=$(dirname $(readlink -f $2))
 UNREAL_BINARY_SHELL_ABSPATH=$(readlink -f $2)
 
 # this block is for running X apps in docker
+# an existing outdated file here will break the script
 XAUTH=/tmp/.docker.xauth
 if [ ! -f $XAUTH ]
 then
